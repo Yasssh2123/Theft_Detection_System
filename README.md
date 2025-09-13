@@ -54,7 +54,7 @@ Before running the system, update these variables:
   ```
 - **Line 131**: Video source
   ```python
-  detector.process_video(0)  # 0=webcam, or 'video.mp4'
+  detector.process_video(0)  # 0=webcam, or 'video.mp4' or 'www.link-of-video.com'
   ```
 
 ### Optional Settings
