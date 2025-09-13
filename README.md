@@ -2,6 +2,26 @@
 
 Real-time theft detection using optimized YOLO model with email alerts and performance monitoring.
 
+## Installation
+
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/Yasssh2123/Theft_Detection_System.git
+cd Theft_Detection_System
+```
+
+### 2. Install Dependencies
+
+```bash
+pip install opencv-python ultralytics openvino
+```
+
+Or use requirements file:
+```bash
+pip install -r requirements.txt
+```
+
 ## Quick Start
 
 ### 1. Model Optimization (Required First Step)
@@ -16,16 +36,7 @@ python optimize_model.py
 python theft_detection.py
 ```
 
-## Installation
 
-```bash
-pip install opencv-python ultralytics openvino
-```
-
-Or use requirements file:
-```bash
-pip install -r requirements.txt
-```
 
 ## Configuration
 
@@ -54,7 +65,7 @@ Before running the system, update these variables:
   ```
 - **Line 131**: Video source
   ```python
-  detector.process_video(0)  # 0=webcam, or 'video.mp4'
+  detector.process_video(0)  # 0=webcam, 'video.mp4', or any URL
   ```
 
 ### Optional Settings
@@ -86,16 +97,25 @@ Theft_Detection_System/
 
 ## Usage
 
-### Video Sources
+### Video Input Sources
 ```python
-# Webcam
+# Webcam (default)
 detector.process_video(0)
 
-# Video file
-detector.process_video('samples/video.mp4')
+# Local video file
+detector.process_video('samples/input1.mp4')
 
-# RTSP Stream
-detector.process_video('rtsp://camera_ip/stream')
+# YouTube/Online video URL
+detector.process_video('https://www.youtube.com/watch?v=VIDEO_ID')
+
+# RTSP camera stream
+detector.process_video('rtsp://username:password@camera_ip:port/stream')
+
+# HTTP video stream
+detector.process_video('http://example.com/video.mp4')
+
+# IP camera
+detector.process_video('http://192.168.1.100:8080/video')
 ```
 
 ### Controls
